@@ -3,7 +3,6 @@ RUN dnf makecache -y
 RUN dnf update -y
 RUN dnf install -y caddy supervisor php php-fpm
 RUN mkdir /run/php-fpm/
-#php-fcgi
 COPY ./container/ /
 EXPOSE 80/tcp
 EXPOSE 443/tcp
