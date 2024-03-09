@@ -18,7 +18,7 @@ cd docker-caddy-php/docker
 # No SELinux
 docker build --squash -t docker-caddy-php .
 # SELinux
-docker build --squash --cgroup-manager cgroupfs -t docker-caddy-php .
+docker build --squash -t docker-caddy-php --cgroup-manager cgroupfs .
 ```
 
 ### Test Run
