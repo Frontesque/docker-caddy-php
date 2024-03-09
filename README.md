@@ -16,9 +16,9 @@ git clone https://github.com/Frontesque/docker-caddy-php
 cd docker-caddy-php/docker
 
 # No SELinux
-docker build -t docker-caddy-php .
+docker build --squash -t docker-caddy-php .
 # SELinux
-docker build --cgroup-manager cgroupfs -t docker-caddy-php .
+docker build --squash --cgroup-manager cgroupfs -t docker-caddy-php .
 ```
 
 ### Test Run
