@@ -6,33 +6,35 @@
 		<title>Test Page for docker-caddy-php</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<style type="text/css">
-			/*<![CDATA[*/
+			/*
+				COLOR SCHEME:
+				https://www.realtimecolors.com/?colors=d8c1d8-110e12-a944c0-7763d8-8b728f&fonts=Poppins-Poppins
+			*/
 			body {
-				background-color: #FAF5F5;
-				color: #000;
+				background-color: #110e12;
+				color: #d8c1d8;
 				font-size: 0.9em;
 				font-family: sans-serif,helvetica;
 				margin: 0;
 				padding: 0;
 			}
 			:link {
-				color: #0B2335;;
+				color: #a944c0;;
 			}
 			:visited {
-				color: #0B2335;;
+				color: #7763d8;;
 			}
 			a:hover {
-				color: #0069DA;
+				color: #8b728f;
 			}
 			h1 {
 				text-align: center;
 				margin: 0;
 				padding: 0.6em 2em 0.4em;
-				background-color: #0B2335;
+				background-color: #211824;
 				color: #fff;
 				font-weight: normal;
 				font-size: 1.75em;
-				border-bottom: 2px solid #000;
 			}
 			h1 strong {
 				font-weight: bold;
@@ -75,7 +77,15 @@
 			}
 			.logos {
 				text-align: center;
-				margin-top: 2em;
+				margin-top: 3em;
+				margin-bottom: 2em;
+			}
+			.logo {
+				height: 4em;
+				border: none;
+				outline: none;
+				margin-right: 2em;
+				margin-left: 2em;
 			}
 			img {
 				border: 2px solid #fff;
@@ -88,9 +98,21 @@
 			.footer {
 				clear: both;
 				text-align: center;
-				font-size: xx-small;
+				font-size: x-small;
 			}
-			/*]]>*/
+			.php-page {
+				width: 50vw;
+				height: 90vh;
+				margin-top: 3em;
+				margin-bottom: 5em;
+				outline: none;
+				border: none;
+				border-radius: 1em;
+				background: #211824;
+			}
+			.instructions > p {
+				margin: 0;
+			}
 		</style>
 	</head>
 
@@ -122,20 +144,33 @@
 					that until you do so, people visiting your website will see
 					this page, and not your content.</p>
 
-					<p>For systems using the Apache HTTP Server:
-					You may now add content to the directory <tt>/var/www/html/</tt>. Note that until you do so, people visiting your website will see this page, and not your content. To prevent this page from ever being used, follow the instructions in the file <tt>/etc/httpd/conf.d/welcome.conf</tt>.</p>
+					<div class="instructions">
+						<p>You many not modify your <code>Caddyfile</code> located at <code>/var/caddy/Caddyfile</code> within your container.</p>
+						<p>You may also add content to the directory <code>/var/www/html/</code>.</p>
+						<p>You should purge the contents of <code>/var/www/html</code> before adding your own content, as that is where this test page currently resides.</p>
+						<p>Note that until you do so, people visiting your website will see this page.</p>
+					</div>
 
-					<p>For systems using NGINX:
-					You should now put your content in a location of your
-					choice and edit the <code>root</code> configuration directive
-					in the <strong>nginx</strong> configuration file
-					<code>/etc/nginx/nginx.conf</code>.</p>
+
+					<!--   Logos   -->
+					<div class="logos">
+						<img class="logo" src="/icons/docker.svg" />
+						<img class="logo" src="/icons/caddy.svg" />
+						<img class="logo" src="/icons/php.svg" style="filter: invert(1)" />
+					</div>
+					<!--   END Logos   -->
 				</div>
 			</div>
 		</div>
 		<div class="footer">
-			<a href="https://apache.org/">Apache&trade;</a> is a registered trademark of <a href="https://apache.org/">the Apache Software Foundation</a> in the United States and/or other countries.<br />
-			<a href="https://nginx.com/">NGINX&trade;</a> is a registered trademark of <a href="https://www.f5.com/">F5 Networks, Inc.</a>.
-	        </div>
+			<a href="https://www.docker.com/"  >Docker&trade;</a> is a registered trademark of <a href="https://www.docker.com/">Docker Inc.</a><br />
+			<a href="https://caddyserver.com/" >Caddy</a>         is a free                    <a href="https://github.com/caddyserver/caddy">open source</a> project that relies on <a href="https://caddyserver.com/sponsor">sponsors</a>.</a><br />
+			<a href="https://www.php.net/" 	   >PHP&trade;</a>    is a registered trademark of <a href="https://www.php.net/">The PHP Group</a>.
+	    </div>
+
+		<div style="text-align: center;">
+			<iframe src="/info.php" class="php-page" />
+		</div>
+
 	</body>
 </html>
