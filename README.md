@@ -12,6 +12,9 @@ To use PHP in your caddyfile, point the <code>php_fastcgi</code> directi<code>un
 
 ###   Build
 ```bash
+git clone https://github.com/Frontesque/docker-caddy-php
+cd docker-caddy-php/docker
+
 # No SELinux
 docker build -t caddy-php .
 # SELinux
