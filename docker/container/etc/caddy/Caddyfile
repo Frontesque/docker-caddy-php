@@ -12,17 +12,11 @@
 # https://caddyserver.com/docs/caddyfile/concepts#addresses
 http:// {
 
-    # Set this path to your site's directory.
+    ###   docker-caddy-php defaults   ###
     root * /var/www/html/
-
-    # Enable the static file server.
+    php_fastcgi unix//run/php-fpm/www.sock
     file_server
-
-    # Another common task is to set up a reverse proxy:
-    # reverse_proxy localhost:8080
-
-    # Or serve a PHP site through php-fpm:
-    # php_fastcgi localhost:9000
+    ###   docker-caddy-php defaults   ###
 
     # Refer to the directive documentation for more options.
     # https://caddyserver.com/docs/caddyfile/directives
