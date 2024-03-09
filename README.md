@@ -8,7 +8,7 @@ You may also add content to the directory <code>/var/www/html/</code>.
 
 You should purge the contents of <code>/var/www/html</code> before adding your own conas that is where this test page currently resides.
 
-To use PHP in your caddyfile, point the <code>php_fastcgi</code> directi<code>unix//run/php-fpm/www.sock</code>.
+To use PHP in your caddyfile, point the <code>php_fastcgi</code> directive to <code>unix//run/php-fpm/www.sock</code>.
 
 ###   Build
 ```bash
