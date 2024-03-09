@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
+        run: docker build --squash . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
         working-directory: ./docker
 
       - name: Log in to registry
