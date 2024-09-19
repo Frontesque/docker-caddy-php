@@ -1,4 +1,4 @@
-FROM fedora:39
+FROM fedora:latest
 RUN dnf makecache -y
 RUN dnf install -y caddy supervisor php php-fpm
 RUN dnf clean all
