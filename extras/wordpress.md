@@ -2,7 +2,7 @@
 
 ### Prerequisites
 ```bash
-podman exec -it wordpress dnf install php-mysqlnd php-gd php-intl php-mbstring php-xml php-zip php-json php-opcache php-mysqli
+podman exec -it wordpress dnf install -y php-mysqlnd php-gd php-intl php-mbstring php-xml php-zip php-json php-opcache php-mysqli php-imagick
 ```
 
 ### First Run
