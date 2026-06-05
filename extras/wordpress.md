@@ -7,7 +7,12 @@ podman exec -it wordpress dnf install php-mysqlnd php-gd php-intl php-mbstring p
 
 ### First Run
 ```bash
-podman run --name wordpress -p 8080:80 -v ./wordpress:/var/www/html:Z ghcr.io/frontesque/docker-caddy-php:latest
+podman run \
+  --name wordpress \
+  --network=host \
+  -v ./Caddyfile:/etc/caddy/Caddyfile:Z \
+  -v ./wordpress:/var/www/html:Z \
+  ghcr.io/frontesque/docker-caddy-php:latest
 ```
 
 ### Start
